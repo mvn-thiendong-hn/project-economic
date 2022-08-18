@@ -16,14 +16,6 @@
         </div>
 
         <div class="form-group">
-          <label for="quote" class="col-form-label">Quote</label>
-          <textarea class="form-control" id="quote" name="quote">{{old('quote')}}</textarea>
-          @error('quote')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-
-        <div class="form-group">
           <label for="summary" class="col-form-label">Summary <span class="text-danger">*</span></label>
           <textarea class="form-control" id="summary" name="summary">{{old('summary')}}</textarea>
           @error('summary')
@@ -130,15 +122,6 @@
           height: 150
       });
     });
-
-    $(document).ready(function() {
-      $('#quote').summernote({
-        placeholder: "Write detail Quote.....",
-          tabsize: 2,
-          height: 100
-      });
-    });
-    // $('select').selectpicker();
 
 </script>
 @endpush

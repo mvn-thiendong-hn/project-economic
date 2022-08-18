@@ -102,11 +102,9 @@
 								</div>
 								<!--/ End Shop By Price -->
                                 <!-- Single Widget -->
-                                <div class="single-widget recent-post">
+                                <!-- <div class="single-widget recent-post">
                                     <h3 class="title">Recent post</h3>
-                                    {{-- {{dd($recent_products)}} --}}
                                     @foreach($recent_products as $product)
-                                        <!-- Single Post -->
                                         @php 
                                             $photo=explode(',',$product->photo);
                                         @endphp
@@ -122,9 +120,8 @@
                                                 <p class="price"><del class="text-muted">${{number_format($product->price,2)}}</del>   ${{number_format($org,2)}}  </p>                                                
                                             </div>
                                         </div>
-                                        <!-- End Single Post -->
                                     @endforeach
-                                </div>
+                                </div> -->
                                 <!--/ End Single Widget -->
                                 <!-- Single Widget -->
                                 <div class="single-widget category">
@@ -168,10 +165,10 @@
 												</select>
 											</div>
 										</div>
-										<ul class="view-mode">
+										<!-- <ul class="view-mode">
 											<li><a href="{{route('product-grids')}}"><i class="fa fa-th-large"></i></a></li>
 											<li class="active"><a href="javascript:void(0)"><i class="fa fa-th-list"></i></a></li>
-										</ul>
+										</ul> -->
 									</div>
 									<!--/ End Shop Top -->
 								</div>
@@ -190,7 +187,7 @@
 															@php 
 																$photo=explode(',',$product->photo);
 															@endphp
-															<img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+															<img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}" style="height: 350px;">
 															<img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
 															</a>
 															<div class="button-head">
@@ -212,8 +209,8 @@
 																@php
 																	$after_discount=($product->price-($product->price*$product->discount)/100);
 																@endphp
-																<span>${{number_format($after_discount,2)}}</span>
-																<del>${{number_format($product->price,2)}}</del>
+																<span>{{number_format($after_discount,2)}} VND</span>
+																<del>{{number_format($product->price,2)}} VND</del>
 															</div>
 															<h3 class="title"><a href="{{route('product-detail',$product->slug)}}">{{$product->title}}</a></h3>
 														{{-- <p>{!! html_entity_decode($product->summary) !!}</p> --}}
@@ -305,7 +302,7 @@
 												@php
 													$after_discount=($product->price-($product->price*$product->discount)/100);
 												@endphp
-												<h3><small><del class="text-muted">${{number_format($product->price,2)}}</del></small>    ${{number_format($after_discount,2)}}  </h3>
+												<h3><small><del class="text-muted">{{number_format($product->price,2)}} VND</del></small>    {{number_format($after_discount,2)}} VND  </h3>
 												<div class="quickview-peragraph">
 													<p>{!! html_entity_decode($product->summary) !!}</p>
 												</div>

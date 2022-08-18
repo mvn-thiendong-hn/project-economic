@@ -3,7 +3,6 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Shipping</h5>
     <div class="card-body">
       <form method="post" action="{{route('shipping.update',$shipping->id)}}">
         @csrf 

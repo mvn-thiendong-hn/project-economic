@@ -16,12 +16,12 @@
 
       <div class="col-xl-10 col-lg-12 col-md-9 mt-5">
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card o-hidden border-0 shadow-lg my-5" style="width: 50%; margin: auto;">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
+            <div class="">
+              <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
+              <div class="">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
@@ -45,7 +45,7 @@
                         @enderror
                     
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-left: 10px">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -60,7 +60,7 @@
                   </form>
                   <hr>
                    
-                  <div class="text-center">
+                  <div>
                     @if (Route::has('password.request'))
                         <a class="btn btn-link small" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}

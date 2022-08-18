@@ -15,15 +15,6 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-
-        <div class="form-group">
-          <label for="quote" class="col-form-label">Quote</label>
-          <textarea class="form-control" id="quote" name="quote">{{$post->quote}}</textarea>
-          @error('quote')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-
         <div class="form-group">
           <label for="summary" class="col-form-label">Summary <span class="text-danger">*</span></label>
           <textarea class="form-control" id="summary" name="summary">{{$post->summary}}</textarea>
@@ -130,13 +121,6 @@
     });
     });
 
-    $(document).ready(function() {
-      $('#quote').summernote({
-        placeholder: "Write short Quote.....",
-          tabsize: 2,
-          height: 100
-      });
-    });
     $(document).ready(function() {
       $('#description').summernote({
         placeholder: "Write detail description.....",

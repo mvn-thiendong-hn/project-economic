@@ -100,22 +100,12 @@ class OrderController extends Controller
         if(session('coupon')){
             $order_data['coupon']=session('coupon')['value'];
         }
-        if($request->shipping){
-            if(session('coupon')){
-                $order_data['total_amount']=Helper::totalCartPrice()+$shipping[0]-session('coupon')['value'];
-            }
-            else{
-                $order_data['total_amount']=Helper::totalCartPrice()+$shipping[0];
-            }
-        }
-        else{
             if(session('coupon')){
                 $order_data['total_amount']=Helper::totalCartPrice()-session('coupon')['value'];
             }
             else{
                 $order_data['total_amount']=Helper::totalCartPrice();
             }
-        }
         // return $order_data['total_amount'];
         $order_data['status']="new";
         if(request('payment_method')=='paypal'){

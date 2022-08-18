@@ -74,7 +74,7 @@ Route::get('blog-cat/{slug}','FrontendController@blogByCategory')->name('blog.ca
 Route::get('blog-tag/{slug}','FrontendController@blogByTag')->name('blog.tag');
 
 // NewsLetter
-Route::post('/subscribe','FrontendController@subscribe')->name('subscribe');
+// Route::post('/subscribe','FrontendController@subscribe')->name('subscribe');
 
 // Product Review
 Route::resource('/review','ProductReviewController');
@@ -127,7 +127,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     // Order
     Route::resource('/order','OrderController');
     // Shipping
-    Route::resource('/shipping','ShippingController');
+    // Route::resource('/shipping','ShippingController');
     // Coupon
     Route::resource('/coupon','CouponController');
     // Settings

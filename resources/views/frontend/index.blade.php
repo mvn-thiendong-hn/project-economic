@@ -17,7 +17,6 @@
                     <div class="carousel-caption d-none d-md-block text-left">
                         <h1 class="wow fadeInDown">{{$banner->title}}</h1>
                         <p>{!! html_entity_decode($banner->description) !!}</p>
-                        <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Shop Now<i class="far fa-arrow-alt-circle-right"></i></i></a>
                     </div>
                 </div>
             @endforeach
@@ -49,7 +48,7 @@
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="single-banner">
                                 @if($cat->photo)
-                                    <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
+                                    <img src="{{$cat->photo}}" alt="{{$cat->photo}}" style="height: 277px">
                                 @else
                                     <img src="https://via.placeholder.com/600x370" alt="#">
                                 @endif
@@ -109,13 +108,13 @@
                                 <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{$product->cat_id}}">
                                     <div class="single-product">
                                         <div class="product-img">
-                                            <a href="{{route('product-detail',$product->slug)}}">
+                                            <a href="{{route('product-detail',$product->slug)}}" >
                                                 @php
                                                     $photo=explode(',',$product->photo);
                                                 // dd($photo);
                                                 @endphp
-                                                <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                                <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                                <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}" style="height: 200px; width: 150px;">
+                                                <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}" style="height: 100px; width: 100px;">
                                                 @if($product->stock<=0)
                                                     <span class="out-of-stock">Sale out</span>
                                                 @elseif($product->condition=='new')
@@ -144,8 +143,8 @@
                                                 @php
                                                     $after_discount=($product->price-($product->price*$product->discount)/100);
                                                 @endphp
-                                                <span>${{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">${{number_format($product->price,2)}}</del>
+                                                <span>{{number_format($after_discount,2)}} VND</span>
+                                                <del style="padding-left:4%;">{{number_format($product->price,2)}} VND</del>
                                             </div>
                                         </div>
                                     </div>
@@ -175,7 +174,7 @@
                 @foreach($featured as $data)
                     <!-- Single Banner  -->
                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="single-banner">
+                        <div class="single-banner" style="height: 600px;">
                             @php
                                 $photo=explode(',',$data->photo);
                             @endphp
@@ -218,8 +217,8 @@
                                         $photo=explode(',',$product->photo);
                                     // dd($photo);
                                     @endphp
-                                    <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                    <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                    <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}" style="height: 200px; width: 150px;">
+                                    <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}" style="height: 200px; width: 150px;">
                                     {{-- <span class="out-of-stock">Hot</span> --}}
                                 </a>
                                 <div class="button-head">
@@ -239,7 +238,7 @@
                                     @php
                                     $after_discount=($product->price-($product->price*$product->discount)/100)
                                     @endphp
-                                    <span>${{number_format($after_discount,2)}}</span>
+                                    <span>{{number_format($after_discount,2)}} VND</span>
                                 </div>
                             </div>
                         </div>
@@ -272,10 +271,10 @@
                     @foreach($product_lists as $product)
                         <div class="col-md-4">
                             <!-- Start Single List  -->
-                            <div class="single-list">
+                            <div class="single-list" style="height: 230px;">
                                 <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="list-image overlay">
+                                    <div class="list-image overlay" style="height: 210px;">
                                         @php
                                             $photo=explode(',',$product->photo);
                                             // dd($photo);
@@ -287,7 +286,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 no-padding">
                                     <div class="content">
                                         <h4 class="title"><a href="#">{{$product->title}}</a></h4>
-                                        <p class="price with-discount">${{number_format($product->discount,2)}}</p>
+                                        <p class="price with-discount">{{number_format($product->price,2)}} VND</p>
                                     </div>
                                 </div>
                                 </div>
@@ -319,7 +318,7 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- Start Single Blog  -->
                         <div class="shop-single-blog">
-                            <img src="{{$post->photo}}" alt="{{$post->photo}}">
+                            <img src="{{$post->photo}}" alt="{{$post->photo}}" style="height: 300px">
                             <div class="content">
                                 <p class="date">{{$post->created_at->format('d M , Y. D')}}</p>
                                 <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
@@ -337,51 +336,41 @@
 <!-- End Shop Blog  -->
 
 <!-- Start Shop Services Area -->
-<section class="shop-services section home">
+<!-- <section class="shop-services section home">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-12">
-                <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-rocket"></i>
                     <h4>Free shiping</h4>
                     <p>Orders over $100</p>
                 </div>
-                <!-- End Single Service -->
             </div>
             <div class="col-lg-3 col-md-6 col-12">
-                <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-reload"></i>
                     <h4>Free Return</h4>
                     <p>Within 30 days returns</p>
                 </div>
-                <!-- End Single Service -->
             </div>
             <div class="col-lg-3 col-md-6 col-12">
-                <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-lock"></i>
                     <h4>Sucure Payment</h4>
                     <p>100% secure payment</p>
                 </div>
-                <!-- End Single Service -->
             </div>
             <div class="col-lg-3 col-md-6 col-12">
-                <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-tag"></i>
                     <h4>Best Peice</h4>
                     <p>Guaranteed price</p>
                 </div>
-                <!-- End Single Service -->
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Shop Services Area -->
-
-@include('frontend.layouts.newsletter')
 
 <!-- Modal -->
 @if($product_lists)
@@ -447,7 +436,7 @@
                                         @php
                                             $after_discount=($product->price-($product->price*$product->discount)/100);
                                         @endphp
-                                        <h3><small><del class="text-muted">${{number_format($product->price,2)}}</del></small>    ${{number_format($after_discount,2)}}  </h3>
+                                        <h3><small><del class="text-muted">{{number_format($product->price,2)}} VND</del></small>    {{number_format($after_discount,2)}} VND</h3>
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($product->summary) !!}</p>
                                         </div>
@@ -504,7 +493,7 @@
                                             </div>
                                         </form>
                                         <div class="default-social">
-                                        <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+                                        <!-- ShareThis BEGIN --><!-- ShareThis END -->
                                         </div>
                                     </div>
                                 </div>
@@ -519,8 +508,8 @@
 @endsection
 
 @push('styles')
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+    <!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script> -->
     <style>
         /* Banner Sliding */
         #Gslider .carousel-inner {

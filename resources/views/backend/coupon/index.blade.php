@@ -26,16 +26,6 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-                <th>S.N.</th>
-                <th>Coupon Code</th>
-                <th>Type</th>
-                <th>Value</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-          </tfoot>
           <tbody>
             @foreach($coupons as $coupon)   
                 <tr>
@@ -50,7 +40,7 @@
                     </td>
                     <td>
                         @if($coupon->type=='fixed')
-                            ${{number_format($coupon->value,2)}}
+                            {{number_format($coupon->value,2)}} VND
                         @else
                             {{$coupon->value}}%
                         @endif</td>

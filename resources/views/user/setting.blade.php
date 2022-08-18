@@ -62,7 +62,7 @@
           @enderror
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="facebook" class="col-form-label">Facebook</label>
           <input type="text" class="form-control" name="facebook" required value="{{$data->facebook}}">
           @error('facebook')
@@ -90,7 +90,7 @@
           @error('twitter')
           <span class="text-danger">{{$message}}</span>
           @enderror
-        </div>
+        </div> -->
         <div class="form-group mb-3">
            <button class="btn btn-success" type="submit">Update</button>
         </div>

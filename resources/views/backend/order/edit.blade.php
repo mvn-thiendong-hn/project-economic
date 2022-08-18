@@ -4,7 +4,6 @@
 
 @section('main-content')
 <div class="card">
-  <h5 class="card-header">Order Edit</h5>
   <div class="card-body">
     <form action="{{route('order.update',$order->id)}}" method="POST">
       @csrf

@@ -27,7 +27,7 @@
 								<li><a href="{{route('about-us')}}">About Us</a></li>
 								<li><a href="#">Faq</a></li>
 								<li><a href="#">Terms & Conditions</a></li>
-								<li><a href="{{route('contact')}}">Contact Us</a></li>
+								<!-- <li><a href="{{route('contact')}}">Contact Us</a></li> -->
 								<li><a href="#">Help</a></li>
 							</ul>
 						</div>
@@ -41,7 +41,6 @@
 								<li><a href="#">Payment Methods</a></li>
 								<li><a href="#">Money-back</a></li>
 								<li><a href="#">Returns</a></li>
-								<li><a href="#">Shipping</a></li>
 								<li><a href="#">Privacy Policy</a></li>
 							</ul>
 						</div>
@@ -60,28 +59,9 @@
 								</ul>
 							</div>
 							<!-- End Single Widget -->
-							<div class="sharethis-inline-follow-buttons"></div>
+							<!-- <div class="sharethis-inline-follow-buttons"></div> -->
 						</div>
 						<!-- End Single Widget -->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Footer Top -->
-		<div class="copyright">
-			<div class="container">
-				<div class="inner">
-					<div class="row">
-						<div class="col-lg-6 col-12">
-							<div class="left">
-								<p>Copyright © {{date('Y')}} <a href="https://github.com/Prajwal100" target="_blank">Prajwal Rai</a>  -  All Rights Reserved.</p>
-							</div>
-						</div>
-						<div class="col-lg-6 col-12">
-							<div class="right">
-								<img src="{{asset('backend/img/payments.png')}}" alt="#">
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>

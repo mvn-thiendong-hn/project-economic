@@ -47,7 +47,7 @@ class PostController extends Controller
         // return $request->all();
         $this->validate($request,[
             'title'=>'string|required',
-            'quote'=>'string|nullable',
+            // 'quote'=>'string|nullable',
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'string|nullable',
@@ -124,7 +124,7 @@ class PostController extends Controller
          // return $request->all();
          $this->validate($request,[
             'title'=>'string|required',
-            'quote'=>'string|nullable',
+            // 'quote'=>'string|nullable',
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'string|nullable',
